@@ -5,7 +5,7 @@ on:
     branches: ["main"]
 
 env:
-  AWS_REGION: ${{ vars.AWS_REGION }} # Now using variable
+  AWS_REGION: ${{ vars.AWS_REGION }} # use variable
   ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }} # Now using variable
   CONTAINER_NAME: ${{ vars.CONTAINER_NAME }} # Now using variable
 
@@ -39,3 +39,7 @@ jobs:
           tags: |
             ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}/${{ env.CONTAINER_NAME }}:${{ github.sha }}
             ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}/${{ env.CONTAINER_NAME }}:latest
+
+
+
+          ######
